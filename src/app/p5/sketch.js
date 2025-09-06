@@ -20,7 +20,7 @@ export const sketch = {
   setup: (p5) => {
     p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
     // p5.noLoop();
-    mParticles = sketch.createParticles(p5, nParticles, 0, p5.width + 50, minHeight, p5.height);
+    mParticles = sketch.createParticles(p5, nParticles, 50, p5.width + 50, minHeight, p5.height);
     particleColor = palette[0];
 
     p5.stroke(255);
@@ -57,7 +57,7 @@ export const sketch = {
     p5.stroke(strokeColor);
     p5.strokeWeight(p5.random(0.1, 3));
 
-    sketch.drawFlowField(p5, mParticles, noiseScale, 0, p5.width + 50, minHeight, p5.height, dimension);
+    sketch.drawFlowField(p5, mParticles, noiseScale, 30, p5.width + 50, minHeight, p5.height, dimension);
   },
 
   drawFlowField: (
