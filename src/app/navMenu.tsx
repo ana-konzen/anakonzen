@@ -11,7 +11,7 @@ export default function NavMenu() {
   const isActive = (href: string) => pathname === href;
 
   return (
-    <nav className="fixed md:text-sm font-mono uppercase font-bold top-8 w-80 left-3 z-50">
+    <div className="fixed md:text-sm font-mono uppercase font-bold top-8 w-80 left-3 z-50">
       <ul className="flex h-full space-x-8 [writing-mode:vertical-lr]">
         {navLinks.map((link) => (
           <li key={link.href}>
@@ -26,6 +26,6 @@ export default function NavMenu() {
           </li>
         ))}
       </ul>
-    </nav>
+    </div>
   );
 }
