@@ -17,7 +17,7 @@ export default function NavMenu() {
           <span key={link.href}>
             <Link
               href={link.href}
-              className={`${isActive(link.href) ? "bg-amber-200 [writing-mode:horizontal-tb]" : "hover:bg-amber-200 [writing-mode:vertical-lr]"}`}
+              className={`${isActive(link.href) ? "bg-amber-200 ml-1 [writing-mode:horizontal-tb]" : "hover:bg-amber-200 [writing-mode:vertical-lr]"}`}
             >
               {link.title}
             </Link>

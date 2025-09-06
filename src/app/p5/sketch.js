@@ -1,36 +1,39 @@
 "use client";
 
 let mParticles;
+let step = 0;
+
+const maxSteps = 2000;
 
 export const sketch = {
   setup: (p5) => {
     p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
-    p5.noLoop();
+    // p5.noLoop();
     mParticles = sketch.createParticles(p5, 200, 0, p5.width + 50, 200, p5.height);
 
     p5.stroke(255);
     p5.fill(100, 200, 100);
+    // p5.pixelDensity(1);
   },
 
   draw: (p5) => {
     // sketch.drawCircle(p5, p5.width / 2, p5.height / 2, 100);
-    sketch.drawMountains(p5, "#73310a", 0.4, 1000, 0.05);
+    if (step < maxSteps) sketch.drawMountains(p5, "#73310a", 0.4, 0.05);
+    step++;
   },
 
   drawCircle: (p5, x, y, r) => {
     p5.ellipse(x, y, r, r);
   },
 
-  drawMountains: (p5, col, dimension = 2, steps = 500, noiseScale = 0.003) => {
-    for (let i = 0; i < steps; i++) {
-      const strokeColor = p5.color(col);
+  drawMountains: (p5, col, dimension = 2, noiseScale = 0.003) => {
+    const strokeColor = p5.color(col);
 
-      strokeColor.setAlpha(p5.random(80, 100));
-      p5.stroke(strokeColor);
-      p5.strokeWeight(p5.random(0.1, 2.5));
+    strokeColor.setAlpha(p5.random(80, 100));
+    p5.stroke(strokeColor);
+    p5.strokeWeight(p5.random(0.1, 2.5));
 
-      sketch.drawFlowField(p5, mParticles, noiseScale, 0, p5.width + 50, 400, p5.height, dimension);
-    }
+    sketch.drawFlowField(p5, mParticles, noiseScale, 0, p5.width + 50, 400, p5.height, dimension);
   },
 
   drawFlowField: (
