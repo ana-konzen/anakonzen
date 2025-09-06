@@ -39,11 +39,11 @@ function GalleryItem({ item }: { item: SanityDocument }) {
           className="aspect-square w-full md:w-auto object-cover"
         />
       )}
-      <div className="md:w-72 p-4 h-full relative">
+      <div className="md:w-72 md:p-4 h-full relative">
         <div className="mb-4 font-mono w-full font-semibold h-full md:text-right">
           <p className="font-bold text-lg">{item.title}</p>
           <p className="text-light-gray">{item.date}</p>
-          <p className="text-right font-sans font-semibold md:bottom-4 md:right-4 text-sm bg-light-gray text-cream px-1 inline-block mt-2">
+          <p className="md:text-right font-sans font-semibold md:bottom-4 md:right-4 text-sm bg-light-gray text-cream px-1 inline-block mt-2">
             {item.type}
           </p>
           <p className="mt-4 text-sm">{item.description || "No description available."}</p>
@@ -53,7 +53,7 @@ function GalleryItem({ item }: { item: SanityDocument }) {
           <a
             href={item.link}
             target="_blank"
-            className="md:absolute text-right uppercase font-mono underline underline-offset-3 font-bold md:bottom-4 md:right-4 text-sm"
+            className="md:absolute md:text-right uppercase font-mono underline underline-offset-3 font-bold md:bottom-4 md:right-4 text-sm"
           >
             {item.linkTitle || "link to prototype"}
           </a>
