@@ -11,15 +11,13 @@ export default function NavMenu() {
   const isActive = (href: string) => pathname === href;
 
   return (
-    <div className="fixed md:text-sm font-mono uppercase font-bold top-8 w-80 left-3 z-50">
-      <ul className="flex h-full space-x-8 [writing-mode:vertical-lr]">
+    <div className="fixed md:text-sm appearance-none font-mono uppercase font-bold top-8 w-80 left-3 z-50">
+      <ul className="flex appearance-none h-full space-x-8 [writing-mode:vertical-lr]">
         {navLinks.map((link) => (
           <li key={link.href}>
             <Link
               href={link.href}
-              className={`${
-                isActive(link.href) ? "bg-amber-200 [writing-mode:horizontal-tb]" : "hover:bg-amber-200"
-              }`}
+              className={`${isActive(link.href) ? "bg-amber-200 [writing-mode:horizontal-tb]" : "hover:bg-amber-200"} appearance-none`}
             >
               {link.title}
             </Link>
