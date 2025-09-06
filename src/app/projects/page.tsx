@@ -39,7 +39,7 @@ function GalleryItem({ item }: { item: SanityDocument }) {
           className="aspect-square w-full md:w-auto object-cover"
         />
       )}
-      <div className="md:w-72 md:p-4 h-full relative">
+      <div className="md:w-72 mt-4 md:mt-0 md:p-4 h-full relative">
         <div className="mb-4 font-mono w-full font-semibold h-full md:text-right">
           <p className="font-bold text-lg">{item.title}</p>
           <p className="text-light-gray">{item.date}</p>
