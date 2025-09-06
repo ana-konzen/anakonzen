@@ -4,11 +4,11 @@ let mParticles;
 let step = 0;
 let particleColor;
 
-const maxSteps = 600;
+const maxSteps = 500;
 
-const palette = ["#73310a", "#80aaed", "#eb4034", "#75160f", "#ffffff"];
+const palette = ["#73310a", "#80aaed", "#eb4034", "#75160f"];
 
-const nParticles = 50;
+const nParticles = 10;
 
 const minHeight = 100;
 
