@@ -3,7 +3,7 @@ import { client } from "@/sanity/client";
 
 import Gallery from "@/app/ui/gallery";
 
-const sketchQuery = `*[_type == "sketch"]`;
+const sketchQuery = `*[_type == "sketch"]|order(orderRank)`;
 
 const options = { next: { revalidate: 30 } };
 

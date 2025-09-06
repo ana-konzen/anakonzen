@@ -11,7 +11,7 @@ export default function AboutPage() {
     <>
       <AboutPageSketch />
       <div className="relative top-8 flex text-sm flex-col items-center justify-center w-full h-full font-mono ">
-        <p className=" mb-20 max-w-[400px]">
+        <p className="mb-20 max-w-[400px]">
           I am a Brazilian designer and coder based in NYC. I merge my background in the fine arts industry
           with creative coding to build a unique design practice. I mostly focus on projects with a social
           impact that involve extensive research, exploring art processes mixed with emerging technologies.
@@ -53,6 +53,10 @@ export default function AboutPage() {
         </BioSection>
         <BioSection title="Skills">
           Creative Coding, UI/UX Design, Research, Art Direction, Prototyping
+        </BioSection>
+        <BioSection title="Colophon">
+          This website was hand-coded by me using Next.js. Fonts used are Fraktion Mono and Fraktion Sans, by
+          Pangram.
         </BioSection>
       </div>
     </>

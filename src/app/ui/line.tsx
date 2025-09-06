@@ -1,3 +1,5 @@
-export default function Line({ length = 100 }: { length?: number }) {
-  return <div style={{ width: length }} className={` h-[1px] mb-1 bg-foreground`} />;
+export default function Line({ length = 100, ver = false }: { length?: number; ver?: boolean }) {
+  return (
+    <div style={{ width: ver ? 1 : length, height: ver ? length : 1 }} className={` mb-1 bg-foreground`} />
+  );
 }
