@@ -22,6 +22,13 @@ export const sketch = {
     step++;
   },
 
+  windowResized: (p5) => {
+    p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
+    p5.clear();
+    mParticles = sketch.createParticles(p5, 200, 0, p5.width + 50, 200, p5.height);
+    step = 0;
+  },
+
   drawCircle: (p5, x, y, r) => {
     p5.ellipse(x, y, r, r);
   },
