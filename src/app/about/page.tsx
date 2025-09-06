@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 
-import Line from "@/app/ui/line";
 import P5Wrapper from "@/app/p5/p5Wrapper";
 import { bioSketch } from "@/app/p5/bioSketch";
 
@@ -65,7 +64,7 @@ export default function AboutPage() {
 
 function BioSection({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="px-4 mb-8 max-w-[400px]">
+    <div className="mb-8 w-full max-w-[400px]">
       <BioHeader title={title} />
       <div className="text-sm pt-2">{children}</div>
     </div>
@@ -74,8 +73,8 @@ function BioSection({ title, children }: { title: string; children: React.ReactN
 
 function BioHeader({ title }: { title: string }) {
   return (
-    <div className="flex space-x-4 items-end uppercase justify-between md:w-[400px] font-bold ">
-      <p>{title}</p> <Line length={400} />
+    <div className="flex space-x-4 items-end uppercase md:w-[400px] font-bold ">
+      <p>{title}</p> <div className={`h-[1px] w-full mb-1 bg-foreground`} />
     </div>
   );
 }
