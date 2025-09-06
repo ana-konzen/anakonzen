@@ -11,19 +11,19 @@ export default function NavMenu() {
   const isActive = (href: string) => pathname === href;
 
   return (
-    <div className="fixed md:text-sm appearance-none font-mono uppercase font-bold top-8 w-80 left-3 z-50">
-      <ul className="flex appearance-none h-full space-x-8 [writing-mode:vertical-lr]">
+    <div className="fixed md:text-sm appearance-none font-mono uppercase font-bold top-8 left-3 z-50">
+      <div className="flex appearance-none h-full space-x-8 [writing-mode:vertical-lr]">
         {navLinks.map((link) => (
-          <li key={link.href}>
+          <span key={link.href}>
             <Link
               href={link.href}
               className={`${isActive(link.href) ? "bg-amber-200 [writing-mode:horizontal-tb]" : "hover:bg-amber-200"} appearance-none`}
             >
               {link.title}
             </Link>
-          </li>
+          </span>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
