@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "tailwindcss/preflight.css" layer(base);
 
 :root {
   --cream: #f6f4ea;
