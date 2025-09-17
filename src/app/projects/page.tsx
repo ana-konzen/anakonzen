@@ -49,15 +49,6 @@ function GalleryItem({ item }: { item: SanityDocument }) {
         </div>
 
         <div className="flex flex-col md:absolute md:bottom-4 md:right-4 space-y-2">
-          {item.slug && (
-            <a
-              href={`/projects/${item.slug.current}`}
-              className="md:text-right uppercase font-mono underline underline-offset-3 font-bold md:bottom-4 md:right-4 text-sm"
-            >
-              Case study
-            </a>
-          )}
-
           {item.link && (
             <a
               href={item.link}
