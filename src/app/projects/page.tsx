@@ -3,6 +3,7 @@ import { client } from "@/sanity/client";
 import { type SanityDocument } from "next-sanity";
 import urlFor from "@/sanity/url";
 import Image from "next/image";
+//
 
 const projectQuery = `*[_type == "project"]|order(orderRank)`;
 
