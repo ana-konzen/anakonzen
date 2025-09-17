@@ -4,11 +4,11 @@ let mParticles;
 let step = 0;
 let particleColor;
 
-const maxSteps = 500;
+const maxSteps = 400;
 
 const palette = ["#73310a", "#80aaed", "#eb4034", "#75160f"];
 
-const nParticles = 10;
+const nParticles = 20;
 
 const minHeight = 100;
 
@@ -21,7 +21,7 @@ export const sketch = {
     p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
     // p5.noLoop();
     mParticles = sketch.createParticles(p5, nParticles, 50, p5.width + 50, minHeight, p5.height);
-    particleColor = palette[0];
+    particleColor = p5.random(palette);
 
     p5.stroke(255);
     p5.fill(100, 200, 100);

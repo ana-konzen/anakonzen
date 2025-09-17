@@ -5,5 +5,5 @@ import { client } from "@/sanity/client";
 const { projectId, dataset } = client.config();
 
 export default function urlFor(source: SanityImageSource) {
-  return projectId && dataset ? imageUrlBuilder({ projectId, dataset }).image(source) : null;
+  return projectId && dataset ? imageUrlBuilder({ projectId, dataset }).image(source).url() : null;
 }

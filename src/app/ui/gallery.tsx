@@ -13,7 +13,7 @@ export default function Gallery({ content }: { content: SanityDocument[] }) {
 }
 
 function GalleryItem({ item }: { item: SanityDocument }) {
-  const imgUrl = urlFor(item.image)?.url();
+  const imgUrl = urlFor(item.image);
 
   return (
     <div className="relative overflow-hidden aspect-square">
