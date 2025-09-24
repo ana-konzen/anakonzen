@@ -12,7 +12,7 @@ export default function NavMenu() {
 
   if (pathname.includes("/projects/")) {
     return (
-      <div className="fixed md:text-sm font-mono uppercase font-bold top-8 left-3 z-50">
+      <div className="fixed text-sm font-mono uppercase font-bold top-8 left-3 z-50">
         <div className="flex flex-col flex-none h-full space-y-8">
           <Link href={"/projects"} className={"hover:bg-amber-200 [writing-mode:vertical-lr]"}>
             (back)

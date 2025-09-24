@@ -55,8 +55,10 @@ export default function AboutPage() {
         </BioSection>
         <BioSection title="Colophon">
           This website was hand-coded by me, feel free to look at the{" "}
-          <a href="https://github.com/ana-konzen/anakonzen">source code</a>. Fonts used are Fraktion Mono and
-          Fraktion Sans, by Pangram.
+          <a className="underline" href="https://github.com/ana-konzen/anakonzen">
+            source code
+          </a>
+          . Fonts used are Fraktion Mono and Fraktion Sans, by Pangram.
         </BioSection>
       </div>
     </>

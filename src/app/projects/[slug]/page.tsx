@@ -20,7 +20,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   }
 
   return (
-    <div className="flex flex-col w-screen font-mono py-8 px-16">
+    <div className="flex flex-col w-screen font-mono py-8 px-4 md:px-16">
       {project.link && (
         <Button
           href={project.link}
