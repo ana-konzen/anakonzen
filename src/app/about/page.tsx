@@ -54,8 +54,9 @@ export default function AboutPage() {
           Creative Coding, UI/UX Design, Research, Art Direction, Prototyping
         </BioSection>
         <BioSection title="Colophon">
-          This website was hand-coded by me using Next.js. Fonts used are Fraktion Mono and Fraktion Sans, by
-          Pangram.
+          This website was hand-coded by me, feel free to look at the{" "}
+          <a href="https://github.com/ana-konzen/anakonzen">source code</a>. Fonts used are Fraktion Mono and
+          Fraktion Sans, by Pangram.
         </BioSection>
       </div>
     </>

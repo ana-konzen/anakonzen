@@ -1,12 +1,13 @@
 import { client } from "@/sanity/client";
 import { type SanityDocument } from "next-sanity";
 import urlFor from "@/sanity/url";
+import Button from "@/app/ui/button";
 
 import Image from "next/image";
 
 import { ProjectContainer } from "./components";
 
-const projectQuery = `*[_type == "project" && slug.current == $slug][0]`;
+const projectQuery = `*[_type == 'project' && slug.current == $slug][0]{..., content[]{..., videos[]{..., "videoURL": video.asset->url}}}`;
 
 const options = { next: { revalidate: 30 } };
 
@@ -19,9 +20,16 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   }
 
   return (
-    <div className="flex flex-col w-screen font-mono p-8">
+    <div className="flex flex-col w-screen font-mono py-8 px-16">
+      {project.link && (
+        <Button
+          href={project.link}
+          label={project.linkTitle || "Link to Prototype"}
+          styling="fixed top-4 right-4 z-100 mix-blend-multiply"
+        />
+      )}
       <TitlePage data={project} />
-      {project.content && <ProjectContainer content={project.content} />}
+      <ProjectContainer project={project} />
     </div>
   );
 }
@@ -30,9 +38,9 @@ function TitlePage({ data }: { data: SanityDocument }) {
   const imgUrl = urlFor(data.image);
 
   return (
-    <div className="flex flex-col w-full md:h-screen">
+    <div className="flex flex-col w-full h-screen">
       {imgUrl && (
-        <div className="w-full overflow-hidden mb-8">
+        <div className="w-full h-[80%] overflow-hidden mb-8">
           <Image
             src={imgUrl}
             width={400}
@@ -44,24 +52,9 @@ function TitlePage({ data }: { data: SanityDocument }) {
       )}
       <div className="md:flex-row flex-col flex justify-between">
         <div>
-          <div className="font-semibold uppercase text-2xl mb-4">{data.title}</div>
-          <div className="md:flex-row flex-col flex space-y-4 md:space-y-0 md:space-x-8">
-            {data.date && <ProjectDetails title="Date" data={data.date} />}
-            {data.type && <ProjectDetails title="Type" data={data.type} />}
-            {data.medium && <ProjectDetails title="Made with" data={data.medium} />}
-          </div>
+          <div className="font-semibold uppercase text-2xl">{data.title}</div>
         </div>
-        <div className="mt-8 md:mt-0 md:w-60 md:text-right">{data.description}</div>
       </div>
-    </div>
-  );
-}
-
-function ProjectDetails({ title, data }: { title: string; data: string }) {
-  return (
-    <div className="w-32">
-      <p className="font-sans text-sm lowercase font-semibold">{title}</p>
-      <p>{data}</p>
     </div>
   );
 }

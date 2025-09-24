@@ -3,6 +3,7 @@ import { client } from "@/sanity/client";
 import { type SanityDocument } from "next-sanity";
 import urlFor from "@/sanity/url";
 import Image from "next/image";
+import Button from "@/app/ui/button";
 
 const projectQuery = `*[_type == "project"]|order(orderRank)`;
 
@@ -39,7 +40,7 @@ function GalleryItem({ item }: { item: SanityDocument }) {
           className="aspect-square w-full md:w-auto object-cover"
         />
       )}
-      <div className="md:w-72 mt-4 md:mt-0 md:p-4 h-full relative">
+      <div className="md:w-72 mt-4 md:mt-0 md:px-4 h-full relative">
         <div className="mb-4 font-mono w-full font-semibold h-full md:text-right">
           <p className="font-bold text-lg">{item.title}</p>
           {/* <p className="text-sm font-normal">{item.type}</p> */}
@@ -48,25 +49,9 @@ function GalleryItem({ item }: { item: SanityDocument }) {
           <p className="font-normal mt-4 text-sm">{item.description || "No description available."}</p>
         </div>
 
-        <div className="flex flex-col md:absolute md:bottom-4 md:right-4 space-y-2">
-          {item.slug && (
-            <a
-              href={`/projects/${item.slug.current}`}
-              className="md:text-right uppercase font-mono underline underline-offset-3 font-bold md:bottom-4 md:right-4 text-sm"
-            >
-              Case study
-            </a>
-          )}
-
-          {item.link && (
-            <a
-              href={item.link}
-              target="_blank"
-              className=" md:text-right uppercase font-mono underline underline-offset-3 font-bold md:bottom-4 md:right-4 text-sm"
-            >
-              {item.linkTitle || "link to prototype"}
-            </a>
-          )}
+        <div className="flex flex-col md:items-end md:absolute md:bottom-0 md:right-4 space-y-2">
+          {item.slug && <Button href={`/projects/${item.slug.current}`} label="Case study" />}
+          {item.link && <Button href={item.link} label={item.linkTitle || "link to prototype"} />}
         </div>
       </div>
     </div>

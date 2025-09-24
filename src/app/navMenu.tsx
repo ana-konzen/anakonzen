@@ -14,7 +14,7 @@ export default function NavMenu() {
     return (
       <div className="fixed md:text-sm font-mono uppercase font-bold top-8 left-3 z-50">
         <div className="flex flex-col flex-none h-full space-y-8">
-          <Link href={"/"} className={"hover:bg-amber-200 [writing-mode:vertical-lr]"}>
+          <Link href={"/projects"} className={"hover:bg-amber-200 [writing-mode:vertical-lr]"}>
             (back)
           </Link>
         </div>
