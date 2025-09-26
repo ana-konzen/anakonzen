@@ -9,8 +9,8 @@ export default function AboutPage() {
   return (
     <>
       <AboutPageSketch />
-      <div className="relative px-16 top-8 flex text-sm flex-col items-center justify-center w-full h-full font-mono ">
-        <p className="mb-20 max-w-[400px]">
+      <div className="subpixel-antialiased relative px-16 top-8 flex text-sm flex-col items-center justify-center w-full h-full font-sans">
+        <p className="mb-20 text-base max-w-[400px]">
           I am a Brazilian designer and coder based in NYC. I merge my background in the fine arts industry
           with creative coding to build a unique design practice. I mostly focus on projects with a social
           impact that involve extensive research, exploring art processes mixed with emerging technologies.
@@ -58,7 +58,7 @@ export default function AboutPage() {
           <a className="underline" href="https://github.com/ana-konzen/anakonzen">
             source code
           </a>
-          . Fonts used are Fraktion Mono and Fraktion Sans, by Pangram.
+          . Fonts used are Neue Montreal and Editorial Old, by Pangram.
         </BioSection>
       </div>
     </>
@@ -76,7 +76,7 @@ function BioSection({ title, children }: { title: string; children: React.ReactN
 
 function BioHeader({ title }: { title: string }) {
   return (
-    <div className="flex space-x-4 items-end uppercase md:w-[400px] font-bold ">
+    <div className="font-sans uppercase font-medium flex space-x-2 items-end md:w-[400px] font-italic">
       <p>{title}</p> <div className={`h-[1px] w-full mb-1 bg-foreground`} />
     </div>
   );
@@ -85,7 +85,7 @@ function BioHeader({ title }: { title: string }) {
 function EducationItem({ degree, institution, year }: { degree: string; institution: string; year: string }) {
   return (
     <div className="mb-3">
-      <p className="font-semibold">{degree}</p>
+      <p className="font-medium">{degree}</p>
       <p className="text-sm">{institution}</p>
       <p className="text-xs text-gray-500">{year}</p>
     </div>
@@ -95,7 +95,7 @@ function EducationItem({ degree, institution, year }: { degree: string; institut
 function ExperienceItem({ role, company, year }: { role: string; company: string; year: string }) {
   return (
     <div className="mb-3">
-      <p className="font-semibold">{role}</p>
+      <p className="font-medium">{role}</p>
       <p className="text-sm">{company}</p>
       <p className="text-xs text-gray-500">{year}</p>
     </div>

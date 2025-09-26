@@ -22,7 +22,12 @@ export function ProjectContainer({ project }: { project: SanityDocument }) {
   };
 
   return (
-    <motion.div variants={containerVariants} initial="hidden" animate="show" className="text-sm">
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      animate="show"
+      className="text-sm px-4 md:px-16"
+    >
       <ProjectSection>
         <div className="w-full justify-between md:flex-row flex-col flex space-y-4 md:space-y-0">
           {project.date && <ProjectDetails title="Date" data={project.date} />}
@@ -32,7 +37,7 @@ export function ProjectContainer({ project }: { project: SanityDocument }) {
       </ProjectSection>
       {project.secondaryImage && (
         <ProjectSection>
-          <div className="w-full overflow-hidden">
+          <div className="w-full overflow-hidden pt-24 pb-24">
             <Image
               src={urlFor(project.secondaryImage) || ""}
               width={800}
@@ -44,7 +49,7 @@ export function ProjectContainer({ project }: { project: SanityDocument }) {
         </ProjectSection>
       )}
       <ProjectSection>
-        <div className="text-base font-medium md:w-1/3 flex flex-col justify-center">
+        <div className="text-2xl font-sans font-medium md:w-1/3 flex flex-col justify-center">
           <p>{project.description}</p>
         </div>
       </ProjectSection>
@@ -60,25 +65,25 @@ export function ProjectContentSection({ item }: { item: SanityDocument }) {
   const isInView = useInView(ref);
 
   const contClass = classNames({
-    "flex flex-col py-8 items-center md:flex-row space-y-8 md:space-x-16": !item.vertical,
+    "flex flex-col py-8 md:items-center md:flex-row space-y-12 md:space-x-16": !item.vertical,
     "mix-blend-multiply": item.multiply,
   });
 
   const textClass = classNames({
-    "md:w-1/3 flex mb-8 md:mb-0 flex-col justify-center": !item.vertical,
-    "md:w-1/2 mb-8": item.vertical,
+    "md:w-1/3 flex mb-16 md:mb-0 flex-col justify-center": !item.vertical,
+    "md:w-1/2 mb-16": item.vertical,
   });
 
   const components: PortableTextComponents = {
     block: {
-      h5: ({ children }) => <h5 className="font-semibold my-8 mb-2">{children}</h5>,
+      h5: ({ children }) => <h5 className="font-semibold text-sm uppercase my-8 mb-2">{children}</h5>,
     },
     marks: {
       link: ({ value, children }) => {
         const target = (value?.href || "").startsWith("http") ? "_blank" : undefined;
         return (
-          <a href={value?.href} target={target} className="uppercase font-bold underline mt-8 block">
-            {children}
+          <a href={value?.href} target={target} className="font-medium hover:font-bold mt-8 block">
+            {children} →
           </a>
         );
       },
@@ -91,11 +96,11 @@ export function ProjectContentSection({ item }: { item: SanityDocument }) {
       initial={{ opacity: 0, y: 150 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, ease: "easeOut", staggerChildren: 0.3 }}
-      className={`${contClass} mb-32 mt-32 md:mt-64`}
+      className={`${contClass} mb-32 mt-64 md:mt-64`}
     >
       {(item.title || item.body) && (
-        <div className={`text-sm ${textClass}`}>
-          {item.title && <h3 className="font-semibold mb-2">{item.title}</h3>}
+        <div className={`text-base max-w-80 font-sans ${textClass}`}>
+          {item.title && <h3 className="font-bold text-sm uppercase mb-2">{item.title}</h3>}
           {Array.isArray(item.body) && <PortableText value={item.body} components={components} />}
         </div>
       )}
@@ -142,7 +147,7 @@ export function ImageGallery({ images, vertical }: { images: SanityDocument[]; v
               height={1000}
             />
             {image.caption && (
-              <p className="mt-4 overflow-scroll font-sans font-medium text-sm">{image.caption}</p>
+              <p className="mt-2 overflow-scroll font-sans text-light-gray text-sm">{image.caption}</p>
             )}
           </div>
         );
@@ -193,7 +198,7 @@ function ProjectSection({ children }: { children: React.ReactNode }) {
       initial={{ opacity: 0, y: 150 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, ease: "easeOut", staggerChildren: 0.3 }}
-      className="flex flex-col pb-8 items-center md:flex-row space-y-8 md:space-x-16 mb-32 mix-blend-multiply"
+      className="flex flex-col items-center md:flex-row md:space-y-0 space-y-8 md:space-x-16 mb-16 mix-blend-multiply"
     >
       {children}
     </motion.div>

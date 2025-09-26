@@ -3,7 +3,7 @@ import { client } from "@/sanity/client";
 import { type SanityDocument } from "next-sanity";
 import urlFor from "@/sanity/url";
 import Image from "next/image";
-import Button from "@/app/ui/button";
+import SecButton from "@/app/ui/secbutton";
 
 const projectQuery = `*[_type == "project"]|order(orderRank)`;
 
@@ -18,7 +18,7 @@ export default async function ProjectsPage() {
 
 function Gallery({ content }: { content: SanityDocument[] }) {
   return (
-    <div className="flex flex-col space-y-24 w-full px-24 py-8 ">
+    <div className="flex flex-col space-y-40 w-full sm:px-48 md:px-24 px-24 py-8 ">
       {content.map((item) => (
         <GalleryItem key={item._id} item={item} />
       ))}
@@ -30,28 +30,26 @@ function GalleryItem({ item }: { item: SanityDocument }) {
   const imgUrl = urlFor(item.image);
 
   return (
-    <div className="md:justify-center md:space-x-8 relative flex-col flex md:flex-row overflow-hidden md:h-100 w-full">
+    <div className="md:justify-center md:space-x-8 relative flex-col flex md:flex-row overflow-hidden md:h-80 w-full">
       {imgUrl && (
         <Image
           src={imgUrl}
           width={400}
           height={400}
           alt={item.title}
-          className="aspect-square w-full md:w-auto object-cover"
+          className="lg:aspect-square w-full md:w-auto object-cover"
         />
       )}
-      <div className="md:w-72 mt-4 md:mt-0 md:px-4 h-full relative">
-        <div className="mb-4 font-mono w-full font-semibold h-full md:text-right">
-          <p className="font-bold text-lg">{item.title}</p>
-          {/* <p className="text-sm font-normal">{item.type}</p> */}
+      <div className="sm:w-52 max-w-72 mt-4 md:mt-0 md:px-4 h-full relative">
+        <div className="font-sans w-full font-semibold h-full md:text-right">
+          <p className="font-serif font-light subpixel-antialiased italic text-4xl">{item.title}</p>
+          <p className="text-sm font-normal">{item.type}</p>
           <p className="font-normal text-sm text-light-gray">{item.date}</p>
-
-          <p className="font-normal mt-4 text-sm">{item.description || "No description available."}</p>
         </div>
 
-        <div className="flex flex-col md:items-end md:absolute md:bottom-0 md:right-4 space-y-2">
-          {item.slug && <Button href={`/projects/${item.slug.current}`} label="Case study" />}
-          {item.link && <Button href={item.link} label={item.linkTitle || "link to prototype"} />}
+        <div className="mt-4 flex md:items-end flex-col md:absolute md:bottom-0 md:right-4 space-y-2">
+          {item.slug && <SecButton href={`/projects/${item.slug.current}`} label="Case study" />}
+          {item.link && <SecButton href={item.link} label={item.linkTitle || "Prototype"} />}
         </div>
       </div>
     </div>

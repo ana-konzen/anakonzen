@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Gallery({ content }: { content: SanityDocument[] }) {
   return (
-    <div className="grid grid-cols-1 auto-cols-max sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 auto-cols-max sm:grid-cols-2 lg:grid-cols-3 gap-16">
       {content.map((item) => (
         <GalleryItem key={item._id} item={item} />
       ))}

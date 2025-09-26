@@ -12,7 +12,7 @@ export default function Button({
   return (
     <Link href={href}>
       <div
-        className={`uppercase w-fit text-center px-2 bg-dark-gray text-cream font-mono font-bold text-sm hover:bg-amber-200 hover:text-dark-gray ${styling}`}
+        className={`w-fit text-center py-1 px-2 rounded-4xl bg-cream border-dark-gray border-1 font-medium text-sm hover:bg-amber-200 hover:text-dark-gray ${styling}`}
       >
         {label}
       </div>

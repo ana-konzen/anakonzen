@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import "@/app/globals.css";
 
-import { mono, sans } from "@/app/ui/fonts";
+import { sans, display, serif } from "@/app/ui/fonts";
 
 import NavMenu from "@/app/navMenu";
 
@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${mono.variable} ${sans.variable} antialiased`}>
+      <body className={`${sans.variable} ${display.variable} ${serif.variable} antialiased`}>
         <NavMenu />
         {children}
       </body>
