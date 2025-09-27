@@ -1,0 +1,69 @@
+import { ProjectSection } from "@/app/mdx-pages/components/components";
+
+import SecButton from "@/app/ui/secbutton";
+
+export const data = {
+  title: "Toy Cars",
+  date: "March 2024",
+  type: "interactive editorial illustration",
+  medium: "p5.js",
+  slug: "toy-cars",
+  description:
+    "An editorial illustration for The Washington Post depicting global economic contrasts: rows of grayscale toy cars symbolize steady growth, while a single red car struggles to move forward.",
+  heroStyling:
+    "absolute md:left-100 -left-16 -top-32 md:-top-8 object-cover w-auto h-[900px] md:h-[1200px]",
+  link: "https://projects.anakonzen.com/toy-cars",
+  linkTitle: "Link to Article",
+  heroIsVideo: true,
+};
+
+<ProjectSection images={["/toy-cars/1.webp"]}>
+
+## The article
+
+Written by Erwin R. Tiongson, the Washington Post op-ed analyzes on Hot Wheels
+cars and their relationship to economics through the “made in” label at the
+bottom of them.
+
+</ProjectSection>
+
+<ProjectSection images={["/toy-cars/2.png"]}>
+
+## Concept
+
+The author reflects on the example of a toy car made in Malaysia in both the
+1970s and 2016, highlighting the contrast between economies that thrive and
+those that remain stagnant over time. I took this as the key concept for my
+illustration: one car is never able to move forward, no matter how much it
+tries.
+
+</ProjectSection>
+
+<ProjectSection videos={[{ url: "/toy-cars/demo.mp4" }]}>
+
+## Implementation
+
+I hand-coded a website for the article, with an animated illustration as part of
+the website. In my illustration, rows of moving grayscale toy cars represent the
+forward momentum of global economies, with each car progressing in unison.
+However, a single red car is unable to move beyond a certain point before a
+black claw—similar to that of an arcade, or a factory—lifts it and places it
+back in the row.
+
+As you scroll through the page and read the article, the rows of cars slowly
+disappear before the single red car drops down.
+
+<SecButton
+  label="link to article"
+  href="https://projects.anakonzen.com/toy-cars"
+/>
+
+</ProjectSection>
+
+<ProjectSection images={["/toy-cars/print.webp"]}>
+
+## Print
+
+I also designed a printed version of the illustration.
+
+</ProjectSection>

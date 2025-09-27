@@ -9,7 +9,10 @@ export default function SecButton({
   styling?: string;
 }) {
   return (
-    <Link href={href} className={`font-sans font-medium hover:font-bold inline-block ${styling}`}>
+    <Link
+      href={href}
+      className={`font-sans no-underline font-medium hover:font-bold inline-block ${styling}`}
+    >
       {label} →
     </Link>
   );

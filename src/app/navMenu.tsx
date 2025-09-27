@@ -10,7 +10,7 @@ export default function NavMenu() {
   const pathname = usePathname();
   const isActive = (href: string) => pathname === href;
 
-  if (pathname.includes("/projects/")) {
+  if (pathname.includes("/projects/") || pathname.includes("mdx")) {
     return (
       <div className="fixed font-medium top-8 left-3 z-50">
         <div className="flex flex-col flex-none h-full space-y-8">

@@ -5,14 +5,22 @@ import Button from "@/app/ui/button";
 
 import Image from "next/image";
 
-import { ProjectContainer } from "./components";
+import { ProjectContainer } from "@/app/projects/components";
 
 const projectQuery = `*[_type == 'project' && slug.current == $slug][0]{..., content[]{..., videos[]{..., "videoURL": video.asset->url}}}`;
 
 const options = { next: { revalidate: 30 } };
 
-export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
-  const project = await client.fetch<SanityDocument>(projectQuery, await params, options);
+export default async function ProjectPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const project = await client.fetch<SanityDocument>(
+    projectQuery,
+    await params,
+    options
+  );
   console.log("Fetched project data:", project);
 
   if (!project) {
