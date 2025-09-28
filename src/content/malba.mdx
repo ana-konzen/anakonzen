@@ -1,0 +1,91 @@
+import { ProjectSection } from "@/app/mdx-pages/components/components";
+
+import SecButton from "@/app/ui/secbutton";
+
+export const data = {
+  title: "Malba",
+  date: "November 2023",
+  type: "generative logo design",
+  medium: "vanilla JavaScript",
+  slug: "malba",
+  description:
+    "A generative logo that emphasizes MALBA’s mission of representing and connecting all of Latin America through its extensive art collection.",
+  heroStyling:
+    "w-screen max-w-[800px] object-bottom-left object-cover h-auto top-100 md:top-72 -left-16 absolute overflow-visible",
+  link: "https://projects.anakonzen.com/malba/logo",
+  linkTitle: "Link to Generator",
+};
+
+<ProjectSection images={["/malba/1.webp", "/malba/2.webp"]}>
+
+## Background
+
+MALBA (Museo de Arte Latinoamericano de Buenos Aires) is a museum in Buenos
+Aires, Argentina. As of 2024, it is the largest museum dedicated to Latin
+American art in the world.
+
+Although Latin America is extremely diverse, MALBA’s mission has always been to
+connect and represent the entirety of it.
+
+</ProjectSection>
+
+<ProjectSection images={["/malba/3.png", "/malba/logo.gif"]}>
+
+## Concept
+
+I strove to find a way to highlight this mission through an ever changing logo,
+representing the diversity and change within Latin America.
+
+## Design
+
+The generative logo is composed by cells of randomized length, angle, and color,
+but that are always interconnected.
+
+## Color
+
+The color palette is based on the flags of the countries represented by the
+museum.
+
+</ProjectSection>
+
+<ProjectSection
+  vertical
+  images={[
+    {
+      url: "/malba/4.png",
+      caption: "A black-and-white version of the logo is used as a default.",
+    },
+    {
+      url: "/malba/5.png",
+      caption:
+        "The main version of the logo uses the identity’s color palette.",
+    },
+    {
+      url: "/malba/6.png",
+      caption:
+        "A secondary version utilizes images of artwork in the museum’s collection.",
+    },
+  ]}
+/>
+
+<ProjectSection videos={[{ url: "/malba/demo.mp4", controls: true }]}>
+
+## Generators
+
+A logo and poster generators were created for use by the museum’s in-house
+design team.
+
+<SecButton
+  label="logo generator"
+  href="https://projects.anakonzen.com/malba/logo"
+/>
+<br />
+<SecButton
+  label="poster generator"
+  href="https://projects.anakonzen.com/malba/poster"
+/>
+
+</ProjectSection>
+
+<ProjectSection images={["/malba/mock1.webp"]} vertical />
+<ProjectSection images={["/malba/mock2.webp"]} vertical />

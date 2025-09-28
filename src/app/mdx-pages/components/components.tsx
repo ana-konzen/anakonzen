@@ -46,7 +46,7 @@ export function ProjectSection({
       initial={{ opacity: 0, y: 150 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, ease: "easeOut", staggerChildren: 0.3 }}
-      className={`mb-48 mt-20 w-full ${contClass} ${styling}`}
+      className={`w-full mb-60 mt-20 ${contClass} ${styling}`}
     >
       {children && <div className={textClass}>{children}</div>}
       {images && <ImageGallery images={images} vertical={vertical} />}
@@ -64,20 +64,21 @@ export function ImageGallery({
 }) {
   const galleryClass = classNames({
     "md:w-3/4 w-full": images.length === 1 && !vertical,
-    "w-full": images.length === 1 && vertical,
+    "w-full flex flex-col justify-center items-center":
+      images.length === 1 && vertical,
     "md:w-3/4 w-full grid grid-cols-2 gap-8": images.length > 1 && !vertical,
-    "grid grid-cols-2 gap-8 w-full": images.length > 1 && vertical,
+    "grid grid-cols-2 gap-8  w-full": images.length > 1 && vertical,
   });
 
   const imageClass = classNames({
     // "flex md:flex-row flex-col": true,
-    "w-full h-auto": images.length === 1,
+    "w-full h-auto w-full flex flex-col items-center": images.length === 1,
     "w-auto h-auto": images.length > 1 && !vertical,
-    "w-auto h-[50vh]": images.length > 1 && vertical,
+    "w-auto": images.length > 1 && vertical,
   });
 
   return (
-    <div className={`${galleryClass}`}>
+    <div className={`${galleryClass} h-fit `}>
       {images.map((image) => {
         const imgUrl = typeof image === "string" ? image : image.url;
         return (
