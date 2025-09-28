@@ -48,10 +48,11 @@ function TitlePage({ data, slug }: { data: ProjectDataType; slug: string }) {
 
 function HeroImage({ data, slug }: { data: ProjectDataType; slug: string }) {
   const styling = data.heroStyling || "w-full object-cover h-full";
+  const heroUrl = data.heroPath || `/projects/${slug}/hero.png`;
   return (
     <div className=" w-auto overflow-visible relative mix-blend-multiply flex-2 md:h-[70%] h-auto mb-4">
       <Image
-        src={`/projects/${slug}/hero.png`}
+        src={heroUrl}
         width={1000}
         height={1000}
         alt={data.title}
@@ -63,10 +64,12 @@ function HeroImage({ data, slug }: { data: ProjectDataType; slug: string }) {
 
 function HeroVideo({ data, slug }: { data: ProjectDataType; slug: string }) {
   const styling = data.heroStyling || "w-full object-cover object-top h-full";
+  const heroUrl = data.heroPath || `/projects/${slug}/hero.mp4`;
+
   return (
     <div className=" w-auto overflow-visible relative mix-blend-multiply flex-2 md:h-[70%] h-auto mb-4">
       <video
-        src={`/projects/${slug}/hero.mp4`}
+        src={heroUrl}
         autoPlay
         loop
         muted

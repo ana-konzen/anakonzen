@@ -32,7 +32,7 @@ export function ProjectContainer({
     >
       <ProjectDetails project={project} />
       <SpecialSection>
-        <div className="text-2xl mt-24 font-sans font-medium md:w-100 flex flex-col justify-center">
+        <div className="text-2xl mt-24 font-sans font-medium w-80 md:w-100 flex flex-col">
           {project.description}
         </div>
       </SpecialSection>
@@ -51,7 +51,7 @@ function SpecialSection({ children }: { children: React.ReactNode }) {
       initial={{ opacity: 0, y: 150 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, ease: "easeOut", staggerChildren: 0.3 }}
-      className={`flex flex-col mb-24 items-center md:flex-row md:space-y-0 space-y-8 md:space-x-16`}
+      className={`flex flex-col mb-24 md:items-center md:flex-row md:space-y-0 space-y-8 md:space-x-16`}
     >
       {children}
     </motion.div>

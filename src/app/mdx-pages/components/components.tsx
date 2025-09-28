@@ -35,9 +35,9 @@ export function ProjectSection({
   });
 
   const textClass = classNames({
-    "prose prose-p:max-w-100": true,
-    "md:w-1/3 mb-16 md:mb-0": !vertical,
-    "md:w-1/2 mb-16": vertical,
+    prose: true,
+    "md:w-1/3 mb-16 md:mb-0 prose-p:max-w-80": !vertical,
+    "md:w-1/2 mb-16 prose-p:max-w-100": vertical,
   });
 
   return (

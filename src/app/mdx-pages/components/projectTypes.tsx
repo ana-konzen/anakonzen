@@ -7,6 +7,7 @@ export type ProjectDataType = {
   slug: string;
   heroStyling: string;
   heroIsVideo?: boolean;
+  heroPath?: string;
 };
 
 export type VideoObjectType = {
