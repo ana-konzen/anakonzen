@@ -3,7 +3,7 @@
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 
-import { ProjectDataType } from "@/app/mdx-pages/components/projectTypes";
+import { ProjectDataType } from "@/app/projects/util";
 
 export function ProjectContainer({
   project,

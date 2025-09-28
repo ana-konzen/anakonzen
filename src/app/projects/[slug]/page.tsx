@@ -1,66 +1,40 @@
-import { client } from "@/sanity/client";
-import { type SanityDocument } from "next-sanity";
-import urlFor from "@/sanity/url";
+import { ProjectContainer } from "@/app/projects/components/projectContainer";
+import { TitlePage } from "@/app/projects/components/titlePage";
+import { getProjects, getProject } from "@/app/projects/util";
+import { notFound } from "next/navigation";
+
 import Button from "@/app/ui/button";
 
-import Image from "next/image";
+export async function generateStaticParams() {
+  const projectData = await getProjects();
+  return projectData.map((project) => ({ slug: project.slug }));
+}
 
-import { ProjectContainer } from "@/app/projects/components";
-
-const projectQuery = `*[_type == 'project' && slug.current == $slug][0]{..., content[]{..., videos[]{..., "videoURL": video.asset->url}}}`;
-
-const options = { next: { revalidate: 30 } };
-
-export default async function ProjectPage({
+export default async function Page({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const project = await client.fetch<SanityDocument>(
-    projectQuery,
-    await params,
-    options
-  );
-  console.log("Fetched project data:", project);
+  const { slug } = await params;
+  const { Project, data } = await getProject(slug);
 
-  if (!project) {
-    return <div>Project not found</div>;
+  if (!data) {
+    notFound();
   }
 
   return (
-    <div className="flex flex-col w-screen font-sans">
-      {project.link && (
+    <div className="w-screen">
+      {data.link && (
         <Button
-          href={project.link}
-          label={project.linkTitle || "Link to Prototype"}
+          href={data.link}
+          label={data.linkTitle || "Link to Prototype"}
           styling="fixed top-8 right-4 z-100 mix-blend-multiply"
         />
       )}
-      <TitlePage data={project} />
-      <ProjectContainer project={project} />
-    </div>
-  );
-}
-
-function TitlePage({ data }: { data: SanityDocument }) {
-  const imgUrl = urlFor(data.heroImage || data.image);
-
-  return (
-    <div className="flex flex-col mb-8 w-full h-screen py-4 px-4 md:px-16">
-      {imgUrl && (
-        <div className="w-full mix-blend-multiply flex-2 md:h-[70%] h-auto mb-4">
-          <Image
-            src={imgUrl}
-            width={1000}
-            height={1000}
-            alt={data.title}
-            className="md:w-auto md:h-screen w-full h-full object-cover md:-top-30 relative md:-left-16"
-          />
-        </div>
-      )}
-      <div className="font-light  text-black ligatures-discretionary hyphens-auto font-serif italic text-8xl md:text-9xl">
-        {data.title}
-      </div>
+      <TitlePage data={data} slug={slug} />
+      <ProjectContainer project={data}>
+        <Project />
+      </ProjectContainer>
     </div>
   );
 }

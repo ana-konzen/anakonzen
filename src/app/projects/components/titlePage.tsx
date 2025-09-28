@@ -1,37 +1,13 @@
 import Image from "next/image";
+import { ProjectDataType } from "@/app/projects/util";
 
-import { ProjectContainer } from "@/app/mdx-pages/components/projectContainer";
-
-import { ProjectDataType } from "@/app/mdx-pages/components/projectTypes";
-
-import Button from "@/app/ui/button";
-
-export default async function Page({
-  params,
+export function TitlePage({
+  data,
+  slug,
 }: {
-  params: Promise<{ slug: string }>;
+  data: ProjectDataType;
+  slug: string;
 }) {
-  const { slug } = await params;
-  const { default: Project, data } = await import(`@/content/${slug}.mdx`);
-
-  return (
-    <div className="w-screen">
-      {data.link && (
-        <Button
-          href={data.link}
-          label={data.linkTitle || "Link to Prototype"}
-          styling="fixed top-8 right-4 z-100 mix-blend-multiply"
-        />
-      )}
-      <TitlePage data={data} slug={slug} />
-      <ProjectContainer project={data}>
-        <Project />
-      </ProjectContainer>
-    </div>
-  );
-}
-
-function TitlePage({ data, slug }: { data: ProjectDataType; slug: string }) {
   return (
     <div className="flex flex-col mb-8 w-full h-screen py-4 px-4 md:px-16">
       {data.heroIsVideo ? (

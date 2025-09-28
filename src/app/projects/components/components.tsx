@@ -5,10 +5,7 @@ import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import classNames from "classnames";
 
-import {
-  VideoObjectType,
-  ImageObjectType,
-} from "@/app/mdx-pages/components/projectTypes";
+import { VideoObjectType, ImageObjectType } from "@/app/projects/util";
 
 export function ProjectSection({
   children,
