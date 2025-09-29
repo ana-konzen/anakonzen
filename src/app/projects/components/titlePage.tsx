@@ -26,13 +26,13 @@ function HeroImage({ data, slug }: { data: ProjectDataType; slug: string }) {
   const styling = data.heroStyling || "w-full object-cover h-full";
   const heroUrl = data.heroPath || `/projects/${slug}/hero.png`;
   return (
-    <div className="hero-cont w-auto overflow-visible relative mix-blend-multiply flex-2 md:h-[70%] h-auto mb-4">
+    <div className="overlay w-auto overflow-visible relative mix-blend-multiply flex-2 md:h-[70%] h-auto mb-4">
       <Image
         src={heroUrl}
         width={1000}
         height={1000}
         alt={data.title}
-        className={`${styling} project-hero mix-blend-multiply`}
+        className={`${styling} no-interaction mix-blend-multiply`}
         unoptimized
       />
     </div>
@@ -44,7 +44,7 @@ function HeroVideo({ data, slug }: { data: ProjectDataType; slug: string }) {
   const heroUrl = data.heroPath || `/projects/${slug}/hero.mp4`;
 
   return (
-    <div className="hero-cont w-auto overflow-visible relative mix-blend-multiply flex-2 md:h-[70%] h-auto mb-4">
+    <div className="overlay w-auto overflow-visible relative mix-blend-multiply flex-2 md:h-[70%] h-auto mb-4">
       <video
         src={heroUrl}
         autoPlay
@@ -53,7 +53,7 @@ function HeroVideo({ data, slug }: { data: ProjectDataType; slug: string }) {
         playsInline
         width={1000}
         height={1000}
-        className={`${styling} project-hero mix-blend-multiply`}
+        className={`${styling} no-interaction mix-blend-multiply`}
       />
     </div>
   );

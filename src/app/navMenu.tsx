@@ -12,7 +12,7 @@ export default function NavMenu() {
 
   if (pathname.includes("/projects/") || pathname.includes("mdx")) {
     return (
-      <div className="fixed font-medium top-8 left-3 z-50">
+      <div className="fixed select-none font-medium top-8 left-3 z-50">
         <div className="flex flex-col flex-none h-full space-y-8">
           <Link
             href={"/projects"}
@@ -26,7 +26,7 @@ export default function NavMenu() {
   }
 
   return (
-    <div className="fixed font-sans text-sm font-bold top-8 left-1 z-50">
+    <div className="fixed select-none font-sans text-sm font-bold top-8 left-1 z-50">
       <div className="flex flex-col flex-none h-full space-y-4">
         {navLinks.map((link) => (
           <Link

@@ -42,15 +42,14 @@ body {
   font-variant-ligatures: no-discretionary-ligatures;
 }
 
-.project-hero {
-  display: block;
+.no-interaction {
   -webkit-user-drag: none;
   user-select: none;
   -webkit-user-select: none;
   -webkit-touch-callout: none;
 }
 
-.hero-cont::after {
+.overlay::after {
   content: "";
   position: absolute;
   width: 100%;

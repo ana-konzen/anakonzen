@@ -24,7 +24,7 @@ function GalleryItem({ item }: { item: SketchType }) {
             height={400}
             loading="eager"
             alt={item.title}
-            className="h-full w-full object-cover"
+            className="no-interaction h-full w-full object-cover"
             placeholder="blur"
             blurDataURL={`/sketches/blurs/${item.img}`}
           />

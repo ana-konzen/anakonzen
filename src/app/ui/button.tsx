@@ -10,9 +10,9 @@ export default function Button({
   styling?: string;
 }) {
   return (
-    <CustomLink href={href}>
+    <CustomLink href={href} className="select-none">
       <div
-        className={`w-fit text-center py-1 px-2 rounded-4xl bg-cream border-dark-gray border-1 font-medium text-sm hover:bg-amber-200 hover:text-dark-gray ${styling}`}
+        className={`w-fit select-none text-center py-1 px-2 rounded-4xl bg-cream border-dark-gray border-1 font-medium text-sm hover:bg-amber-200 hover:text-dark-gray ${styling}`}
       >
         {label}
       </div>
