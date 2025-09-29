@@ -41,3 +41,21 @@ body {
 .ligatures-normal {
   font-variant-ligatures: no-discretionary-ligatures;
 }
+
+.project-hero {
+  display: block;
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.hero-cont::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--background);
+  opacity: 0;
+  inset: 0;
+}
