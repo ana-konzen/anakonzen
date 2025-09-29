@@ -33,6 +33,7 @@ function HeroImage({ data, slug }: { data: ProjectDataType; slug: string }) {
         height={1000}
         alt={data.title}
         className={styling}
+        unoptimized
       />
     </div>
   );

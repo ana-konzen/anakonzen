@@ -1,4 +1,5 @@
-import Link from "next/link";
+import CustomLink from "@/app/ui/customLink";
+
 export default function SecButton({
   href,
   label,
@@ -9,11 +10,11 @@ export default function SecButton({
   styling?: string;
 }) {
   return (
-    <Link
+    <CustomLink
       href={href}
       className={`font-sans no-underline font-medium hover:font-bold inline-block ${styling}`}
     >
       {label} →
-    </Link>
+    </CustomLink>
   );
 }

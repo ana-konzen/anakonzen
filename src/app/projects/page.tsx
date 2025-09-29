@@ -1,7 +1,8 @@
 import Image from "next/image";
-import SecButton from "@/app/ui/secbutton";
+import SecButton from "@/app/ui/secButton";
 
 import { getProjects, ProjectDataType } from "@/app/projects/util";
+
 
 export default async function ProjectsPage() {
   const projectData = await getProjects();

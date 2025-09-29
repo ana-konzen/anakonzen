@@ -2,8 +2,9 @@ import { ProjectContainer } from "@/app/projects/components/projectContainer";
 import { TitlePage } from "@/app/projects/components/titlePage";
 import { getProjects, getProject } from "@/app/projects/util";
 import { notFound } from "next/navigation";
-
 import Button from "@/app/ui/button";
+
+
 
 export async function generateStaticParams() {
   const projectData = await getProjects();

@@ -52,3 +52,4 @@ export async function getProject(slug: string) {
   const { default: Project, data } = await import(`@/content/${slug}.mdx`);
   return { Project, data };
 }
+
