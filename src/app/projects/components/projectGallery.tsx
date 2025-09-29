@@ -45,7 +45,11 @@ function ImageGallery({
   return (
     <>
       {images.map((image) => {
+        //image url is /projects/project-name/imagename.jpg
         const imgUrl = typeof image === "string" ? image : image.url;
+        // blur path is /projects/project-name/blurs/imagename.jpg
+        const blurUrl = `/projects${imgUrl.replace(/\/([^/]+)\.(jpg|jpeg|png|gif)$/, "/blurs/$1.$2")}`;
+
         return (
           <div key={imgUrl} className={imageClass}>
             <Image
@@ -56,6 +60,8 @@ function ImageGallery({
               height={1000}
               loading="eager"
               priority={images.length === 1}
+              placeholder="blur"
+              blurDataURL={blurUrl}
             />
             {typeof image === "object" && image.caption && (
               <p className="mt-2 overflow-scroll font-sans text-light-gray text-sm">
@@ -90,6 +96,7 @@ function VideoGallery({
             className="object-cover w-full h-auto"
             width={1000}
             height={1000}
+            poster={"/web-mock-up.png"}
           />
         );
       })}

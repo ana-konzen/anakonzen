@@ -25,6 +25,8 @@ function GalleryItem({ item }: { item: SketchType }) {
             loading="eager"
             alt={item.title}
             className="h-full w-full object-cover"
+            placeholder="blur"
+            blurDataURL={`/sketches/blurs/${item.img}`}
           />
         )}
         <div className="p-4 font-semibold transition-opacity duration-300 opacity-0 hover:opacity-100 absolute w-full h-full bg-amber-200 top-0">
