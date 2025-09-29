@@ -15,7 +15,7 @@ export function TitlePage({
       ) : (
         <HeroImage data={data} slug={slug} />
       )}
-      <div className="px-4 md:px-16 font-light text-black ligatures-discretionary hyphens-auto font-serif italic text-8xl md:text-9xl">
+      <div className="px-10 md:px-16 font-light text-black ligatures-discretionary hyphens-auto font-serif italic text-8xl md:text-9xl">
         {data.title}
       </div>
     </div>

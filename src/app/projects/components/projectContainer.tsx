@@ -28,7 +28,7 @@ export function ProjectContainer({
       variants={containerVariants}
       initial="hidden"
       animate="show"
-      className="text-sm w-screen px-4 md:px-16"
+      className="text-sm w-screen px-10 md:px-16"
     >
       <ProjectDetails project={project} />
       <SpecialSection>
