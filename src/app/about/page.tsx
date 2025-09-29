@@ -9,11 +9,13 @@ export default function AboutPage() {
   return (
     <>
       <AboutPageSketch />
-      <div className="subpixel-antialiased relative px-16 top-8 flex text-sm flex-col items-center justify-center w-full h-full font-sans">
-        <p className="mb-20 text-base max-w-[400px]">
-          I am a Brazilian designer and coder based in NYC. I merge my background in the fine arts industry
-          with creative coding to build a unique design practice. I mostly focus on projects with a social
-          impact that involve extensive research, exploring art processes mixed with emerging technologies.
+      <div className="subpixel-antialiased relative px-16 top-14 flex text-sm flex-col items-center justify-center w-full h-full font-sans">
+        <p className="mb-20 text-sm max-w-[400px]">
+          I am a Brazilian designer and coder based in NYC. I merge my
+          background in the fine arts industry with creative coding to build a
+          unique design practice. I mostly focus on projects with a social
+          impact that involve extensive research, exploring art processes mixed
+          with emerging technologies.
         </p>
         <BioSection title="Education">
           <EducationItem
@@ -55,7 +57,10 @@ export default function AboutPage() {
         </BioSection>
         <BioSection title="Colophon">
           This website was hand-coded by me, feel free to look at the{" "}
-          <a className="underline" href="https://github.com/ana-konzen/anakonzen">
+          <a
+            className="underline"
+            href="https://github.com/ana-konzen/anakonzen"
+          >
             source code
           </a>
           . Fonts used are Neue Montreal and Editorial Old, by Pangram.
@@ -65,7 +70,13 @@ export default function AboutPage() {
   );
 }
 
-function BioSection({ title, children }: { title: string; children: React.ReactNode }) {
+function BioSection({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
   return (
     <div className="mb-8 w-full max-w-[400px]">
       <BioHeader title={title} />
@@ -82,7 +93,15 @@ function BioHeader({ title }: { title: string }) {
   );
 }
 
-function EducationItem({ degree, institution, year }: { degree: string; institution: string; year: string }) {
+function EducationItem({
+  degree,
+  institution,
+  year,
+}: {
+  degree: string;
+  institution: string;
+  year: string;
+}) {
   return (
     <div className="mb-3">
       <p className="font-medium">{degree}</p>
@@ -92,7 +111,15 @@ function EducationItem({ degree, institution, year }: { degree: string; institut
   );
 }
 
-function ExperienceItem({ role, company, year }: { role: string; company: string; year: string }) {
+function ExperienceItem({
+  role,
+  company,
+  year,
+}: {
+  role: string;
+  company: string;
+  year: string;
+}) {
   return (
     <div className="mb-3">
       <p className="font-medium">{role}</p>

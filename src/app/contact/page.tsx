@@ -10,12 +10,18 @@ export default function ContactPage() {
   return (
     <>
       <ContactPageSketch />
-      <div className="relative top-8 flex flex-col items-center justify-center w-full h-full">
+      <div className="relative top-14 flex flex-col items-center justify-center w-full h-full">
         <p className="mb-10 max-w-[400px]">Please email me to get in touch!</p>
 
-        <ContactItem title="anakonzen.design@gmail.com" href="mailto:anakonzen.design@gmail.com" />
+        <ContactItem
+          title="anakonzen.design@gmail.com"
+          href="mailto:anakonzen.design@gmail.com"
+        />
         <ContactItem title="GitHub" href="https://github.com/ana-konzen" />
-        <ContactItem title="LinkedIn" href="https://www.linkedin.com/in/ana-konzen-oliveira-147164194/" />
+        <ContactItem
+          title="LinkedIn"
+          href="https://www.linkedin.com/in/ana-konzen-oliveira-147164194/"
+        />
       </div>
     </>
   );

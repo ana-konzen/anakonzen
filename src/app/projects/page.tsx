@@ -11,7 +11,7 @@ export default async function ProjectsPage() {
 
 function Gallery({ content }: { content: ProjectDataType[] }) {
   return (
-    <div className="flex flex-col space-y-40 w-full sm:px-48 md:px-24 px-24 py-8 ">
+    <div className="flex flex-col space-y-40 w-full sm:px-48 md:px-24 px-24 py-16 ">
       {content.map((item) => (
         <GalleryItem key={item.title} item={item} />
       ))}
