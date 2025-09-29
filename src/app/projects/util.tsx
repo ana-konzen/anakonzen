@@ -28,16 +28,16 @@ export type ImageObjectType = {
 
 export async function getProjects() {
   const mdxFiles = fs
-    .readdirSync(path.join(process.cwd(), "src", "content"))
+    .readdirSync(path.join(process.cwd(), "src", "content", "projects"))
     .filter((file) => file.endsWith(".mdx"));
 
   console.log("Available MDX files:", mdxFiles);
 
-  console.log(path.join(process.cwd(), "src", "content"));
+  console.log(path.join(process.cwd(), "src", "content", "projects"));
 
   const projects = await Promise.all(
     mdxFiles.map(async (file) => {
-      const { data } = await import(`@/content/${file}`);
+      const { data } = await import(`@/content/projects/${file}`);
       return {
         ...data,
         slug: path.basename(file, path.extname(file)),
@@ -49,7 +49,8 @@ export async function getProjects() {
 }
 
 export async function getProject(slug: string) {
-  const { default: Project, data } = await import(`@/content/${slug}.mdx`);
+  const { default: Project, data } = await import(
+    `@/content/projects/${slug}.mdx`
+  );
   return { Project, data };
 }
-
