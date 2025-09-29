@@ -22,6 +22,7 @@ function GalleryItem({ item }: { item: SketchType }) {
             src={imgUrl}
             width={400}
             height={400}
+            loading="eager"
             alt={item.title}
             className="h-full w-full object-cover"
           />

@@ -20,7 +20,8 @@
     "p5": "^2.0.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-p5": "^1.4.1"
+    "react-p5": "^1.4.1",
+    "sharp": "^0.34.4"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

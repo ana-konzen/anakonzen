@@ -54,6 +54,8 @@ function ImageGallery({
               className={`object-cover w-auto`}
               width={1500}
               height={1000}
+              loading="eager"
+              priority={images.length === 1}
             />
             {typeof image === "object" && image.caption && (
               <p className="mt-2 overflow-scroll font-sans text-light-gray text-sm">
