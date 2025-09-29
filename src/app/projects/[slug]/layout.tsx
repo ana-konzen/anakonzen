@@ -2,10 +2,15 @@ import type { Metadata } from "next";
 import { getProject } from "@/app/projects/util";
 import { notFound } from "next/navigation";
 
-type Props = { children: React.ReactNode; params: { slug: string } };
+type Params = { slug: string };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { data } = await getProject(params.slug);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<Params>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const { data } = await getProject(slug);
 
   if (!data) {
     notFound();
@@ -24,6 +29,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function ProjectLayout({ children }: Props) {
+export default function ProjectLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return <>{children}</>;
 }
