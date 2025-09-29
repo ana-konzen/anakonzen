@@ -15,7 +15,7 @@ function GalleryItem({ item }: { item: SketchType }) {
   const imgUrl = `/sketches/${item.img}`;
 
   return (
-    <div className="relative overflow-hidden aspect-square">
+    <div className="relative rounded-[100%] overflow-hidden aspect-square">
       <a href={item.link} target="_blank">
         {imgUrl && (
           <Image
@@ -29,7 +29,7 @@ function GalleryItem({ item }: { item: SketchType }) {
             blurDataURL={`/sketches/blurs/${item.img}`}
           />
         )}
-        <div className="p-4 font-semibold transition-opacity duration-300 opacity-0 hover:opacity-100 absolute w-full h-full bg-amber-200 top-0">
+        <div className="p-4 font-semibold flex flex-col items-center justify-center background-cream backdrop-blur-3xl transition-opacity duration-300 opacity-0 hover:opacity-80 absolute w-full h-full top-0">
           <h3>{item.title}</h3>
           <h3>{item.year}</h3>
         </div>

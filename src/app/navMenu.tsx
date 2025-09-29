@@ -14,7 +14,10 @@ export default function NavMenu() {
     return (
       <div className="fixed font-medium top-8 left-3 z-50">
         <div className="flex flex-col flex-none h-full space-y-8">
-          <Link href={"/projects"} className={"hover:bg-amber-200 [writing-mode:vertical-lr]"}>
+          <Link
+            href={"/projects"}
+            className={"hover:bg-amber-200 [writing-mode:vertical-lr]"}
+          >
             (back)
           </Link>
         </div>
@@ -23,17 +26,20 @@ export default function NavMenu() {
   }
 
   return (
-    <div className="fixed font-sans font-medium top-8 left-3 z-50">
-      <div className="flex flex-col flex-none h-full space-y-8">
+    <div className="fixed font-sans text-sm font-bold top-8 left-1 z-50">
+      <div className="flex flex-col flex-none h-full space-y-4">
         {navLinks.map((link) => (
-          <span key={link.href}>
-            <Link
-              href={link.href}
-              className={`${isActive(link.href) ? "bg-amber-200 ml-1 [writing-mode:horizontal-tb]" : "hover:bg-amber-200 [writing-mode:vertical-lr]"}`}
+          <Link
+            href={link.href}
+            key={link.href}
+            className={`group w-fit py-2 px-2`}
+          >
+            <span
+              className={`${isActive(link.href) ? "ml-1 [writing-mode:horizontal-tb]" : "group-hover:bg-amber-200 [writing-mode:vertical-lr]"}`}
             >
               {link.title}
-            </Link>
-          </span>
+            </span>
+          </Link>
         ))}
       </div>
     </div>
