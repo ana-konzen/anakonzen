@@ -47,7 +47,11 @@ function GalleryItem({ item }: { item: ProjectDataType }) {
             <SecButton href={`/projects/${item.slug}`} label="Case study" />
           )}
           {item.link && (
-            <SecButton href={item.link} label={item.linkTitle || "Prototype"} />
+            <SecButton
+              styling="hidden md:inline-block"
+              href={item.link}
+              label={item.linkTitle || "Prototype"}
+            />
           )}
         </div>
       </div>

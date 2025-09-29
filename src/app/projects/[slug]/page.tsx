@@ -27,7 +27,7 @@ export default async function Page({
         <Button
           href={data.link}
           label={data.linkTitle || "Link to Prototype"}
-          styling="fixed top-8 right-4 z-100 mix-blend-multiply"
+          styling="hidden md:block fixed top-8 right-4 z-100 mix-blend-multiply"
         />
       )}
       <TitlePage data={data} slug={slug} />

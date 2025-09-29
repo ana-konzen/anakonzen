@@ -12,7 +12,7 @@ export default function SecButton({
   return (
     <CustomLink
       href={href}
-      className={`font-sans select-none no-underline font-medium hover:font-bold inline-block ${styling}`}
+      className={`font-sans select-none no-underline font-medium hover:font-bold ${styling}`}
     >
       {label} →
     </CustomLink>
