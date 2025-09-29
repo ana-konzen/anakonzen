@@ -9,7 +9,7 @@ export function TitlePage({
   slug: string;
 }) {
   return (
-    <div className="flex overflow-visible flex-col mb-8 w-full md:h-screen h-dvh pb-4">
+    <div className="flex overflow-visible flex-col mb-8 w-full md:h-screen h-svh pb-4">
       {data.heroIsVideo ? (
         <HeroVideo data={data} slug={slug} />
       ) : (
