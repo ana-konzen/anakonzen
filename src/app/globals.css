@@ -22,12 +22,12 @@
   --color-accent: var(--accent-color);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: var(--dark-gray);
     --foreground: var(--cream);
   }
-}
+} */
 
 body {
   background: var(--background);
