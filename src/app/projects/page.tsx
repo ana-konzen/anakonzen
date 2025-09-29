@@ -23,14 +23,14 @@ function GalleryItem({ item }: { item: ProjectDataType }) {
   const imgUrl = `/thumbnails/${item.slug}.gif`;
 
   return (
-    <div className="md:justify-center overlay relative flex-col flex md:flex-row overflow-hidden md:h-80 w-full">
+    <div className="md:justify-center relative flex-col flex md:flex-row overflow-hidden md:h-80 w-full">
       {imgUrl && (
         <Image
           src={imgUrl}
           width={400}
           height={400}
           alt={item.title}
-          className="lg:aspect-square rounded-[100%] no-interaction w-full md:w-auto object-cover"
+          className="lg:aspect-square overlay rounded-[100%] no-interaction w-full md:w-auto object-cover"
         />
       )}
       <div className="sm:w-52 max-w-72 mt-4 md:mt-0 md:px-4 h-full relative">
