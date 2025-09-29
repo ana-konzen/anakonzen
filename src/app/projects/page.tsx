@@ -1,5 +1,6 @@
 import Image from "next/image";
 import SecButton from "@/app/ui/secButton";
+import Link from "next/link";
 
 import { getProjects, ProjectDataType } from "@/app/projects/util";
 
@@ -25,13 +26,18 @@ function GalleryItem({ item }: { item: ProjectDataType }) {
   return (
     <div className="md:justify-center relative flex-col flex md:flex-row overflow-hidden md:h-80 w-full">
       {imgUrl && (
-        <Image
-          src={imgUrl}
-          width={400}
-          height={400}
-          alt={item.title}
-          className="lg:aspect-square overlay rounded-[100%] no-interaction w-full md:w-auto object-cover"
-        />
+        <Link
+          href={`/projects/${item.slug}`}
+          className="lg:aspect-square bg-amber-300 overflow-hidden rounded-[100%] w-full md:w-auto"
+        >
+          <Image
+            src={imgUrl}
+            width={400}
+            height={400}
+            alt={item.title}
+            className="overlay no-interaction w-full h-full object-cover"
+          />
+        </Link>
       )}
       <div className="sm:w-52 max-w-72 mt-4 md:mt-0 md:px-4 h-full relative">
         <div className="font-sans w-full font-semibold h-full md:text-right">

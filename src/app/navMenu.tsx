@@ -12,7 +12,7 @@ export default function NavMenu() {
 
   if (pathname.includes("/projects/") || pathname.includes("mdx")) {
     return (
-      <div className="fixed subpixel-antialiased text-sm select-none font-normal top-8 left-3 z-50">
+      <div className="fixed subpixel-antialiased text-sm select-none font-medium top-8 left-3 z-50">
         <Link
           href={"/projects"}
           className={"hover:bg-amber-200 [writing-mode:vertical-lr]"}
