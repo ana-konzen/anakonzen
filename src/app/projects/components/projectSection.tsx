@@ -4,7 +4,7 @@ import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import classNames from "classnames";
 import { VideoObjectType, ImageObjectType } from "@/app/projects/util";
-import { ProjectGallery } from "./projectGallery";
+import { ProjectGallery } from "@/app/projects/components/projectGallery";
 
 export function ProjectSection({
   children,
