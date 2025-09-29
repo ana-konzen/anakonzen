@@ -4,8 +4,6 @@ import { getProjects, getProject } from "@/app/projects/util";
 import { notFound } from "next/navigation";
 import Button from "@/app/ui/button";
 
-
-
 export async function generateStaticParams() {
   const projectData = await getProjects();
   return projectData.map((project) => ({ slug: project.slug }));

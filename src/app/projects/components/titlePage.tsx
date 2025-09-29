@@ -9,13 +9,13 @@ export function TitlePage({
   slug: string;
 }) {
   return (
-    <div className="flex flex-col mb-8 w-full h-screen py-4 px-4 md:px-16">
+    <div className="flex overflow-visible flex-col mb-8 w-full md:h-screen h-dvh pb-4">
       {data.heroIsVideo ? (
         <HeroVideo data={data} slug={slug} />
       ) : (
         <HeroImage data={data} slug={slug} />
       )}
-      <div className="font-light  text-black ligatures-discretionary hyphens-auto font-serif italic text-8xl md:text-9xl">
+      <div className="px-4 md:px-16 font-light text-black ligatures-discretionary hyphens-auto font-serif italic text-8xl md:text-9xl">
         {data.title}
       </div>
     </div>
@@ -26,13 +26,13 @@ function HeroImage({ data, slug }: { data: ProjectDataType; slug: string }) {
   const styling = data.heroStyling || "w-full object-cover h-full";
   const heroUrl = data.heroPath || `/projects/${slug}/hero.png`;
   return (
-    <div className=" w-auto overflow-visible relative mix-blend-multiply flex-2 md:h-[70%] h-auto mb-4">
+    <div className="w-auto overflow-visible relative mix-blend-multiply flex-2 md:h-[70%] h-auto mb-4">
       <Image
         src={heroUrl}
         width={1000}
         height={1000}
         alt={data.title}
-        className={styling}
+        className={`${styling} mix-blend-multiply`}
         unoptimized
       />
     </div>
@@ -53,7 +53,7 @@ function HeroVideo({ data, slug }: { data: ProjectDataType; slug: string }) {
         playsInline
         width={1000}
         height={1000}
-        className={styling}
+        className={`${styling} mix-blend-multiply`}
       />
     </div>
   );
