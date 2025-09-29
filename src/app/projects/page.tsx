@@ -1,5 +1,5 @@
 import Image from "next/image";
-import SecButton from "@/app/ui/secButton";
+import SecButton from "@/app/ui/tempFile";
 
 import { getProjects, ProjectDataType } from "@/app/projects/util";
 

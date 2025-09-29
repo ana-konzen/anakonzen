@@ -1,6 +1,6 @@
 import type { MDXComponents } from "mdx/types";
 import { ProjectSection } from "@/app/projects/components/projectSection";
-import SecButton from "@/app/ui/secButton";
+import SecButton from "@/app/ui/tempFile";
 import Link from "next/link";
 
 function CustomLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
