@@ -1,8 +1,8 @@
 export const navLinks = [
-  {
-    title: "Ana Konzen",
-    href: "/",
-  },
+  // {
+  //   title: "Ana Konzen",
+  //   href: "/",
+  // },
   {
     title: "Projects",
     href: "/projects",

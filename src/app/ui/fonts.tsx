@@ -1,57 +1,43 @@
 import localFont from "next/font/local";
 
-export const mono = localFont({
-  variable: "--font-fraktion-mono",
+export const display = localFont({
+  variable: "--font-display",
+  src: [{ path: "./fonts/display/PPRader-Medium.woff2", weight: "700", style: "normal" }],
+});
+
+export const serif = localFont({
+  variable: "--font-serif",
   src: [
-    {
-      path: "./fonts/mono/PPFraktionMono-Light.woff2",
-      weight: "300",
-      style: "normal",
-    },
-    {
-      path: "./fonts/mono/PPFraktionMono-LightItalic.woff2",
-      weight: "300",
-      style: "italic",
-    },
-    {
-      path: "./fonts/mono/PPFraktionMono-Regular.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "./fonts/mono/PPFraktionMono-RegularItalic.woff2",
-      weight: "400",
-      style: "italic",
-    },
-    {
-      path: "./fonts/mono/PPFraktionMono-Bold.woff2",
-      weight: "700",
-      style: "normal",
-    },
-    {
-      path: "./fonts/mono/PPFraktionMono-BoldItalic.woff2",
-      weight: "700",
-      style: "italic",
-    },
+    { path: "./fonts/serif/PPEditorialOld-Thin.woff2", weight: "100", style: "normal" },
+    { path: "./fonts/serif/PPEditorialOld-ThinItalic.woff2", weight: "100", style: "italic" },
+    { path: "./fonts/serif/PPEditorialOld-Ultralight.woff2", weight: "300", style: "normal" },
+    { path: "./fonts/serif/PPEditorialOld-UltralightItalic.woff2", weight: "300", style: "italic" },
+    { path: "./fonts/serif/PPEditorialOld-Regular.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/serif/PPEditorialOld-Italic.woff2", weight: "400", style: "italic" },
+    { path: "./fonts/serif/PPEditorialOld-Bold.woff2", weight: "700", style: "normal" },
+    { path: "./fonts/serif/PPEditorialOld-BoldItalic.woff2", weight: "700", style: "italic" },
+    { path: "./fonts/serif/PPEditorialOld-Heavy.woff2", weight: "900", style: "normal" },
+    { path: "./fonts/serif/PPEditorialOld-HeavyItalic.woff2", weight: "900", style: "italic" },
   ],
 });
 
 export const sans = localFont({
-  variable: "--font-fraktion-sans",
+  variable: "--font-sans",
   src: [
     {
-      path: "./fonts/sans/PPFraktionSans-Light.woff2",
+      path: "./fonts/sans/PPNeueMontreal-Book.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "./fonts/sans/PPFraktionSans-Bold.woff2",
+      path: "./fonts/sans/PPNeueMontreal-Bold.woff2",
       weight: "700",
       style: "normal",
     },
     {
-      path: "./fonts/sans/PPFraktionSans-Thin.otf",
-      weight: "200",
+      path: "./fonts/sans/PPNeueMontreal-Medium.woff2",
+      weight: "500",
+      style: "normal",
     },
   ],
 });

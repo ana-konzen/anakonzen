@@ -1,9 +1,10 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 :root {
-  --cream: #f6f4ea;
-  --dark-gray: #626159;
-  --light-gray: #9e9e9e;
+  --cream: #fbfaf3;
+  --dark-gray: #0d0c0b;
+  --light-gray: #7a7676;
   --accent-color: #ff6f61;
 }
 
@@ -12,23 +13,48 @@
   --foreground: var(--dark-gray);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-mono: var(--font-fraktion-mono);
-  --font-sans: var(--font-fraktion-sans);
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+  --font-serif: var(--font-serif);
   --color-light-gray: var(--light-gray);
   --color-dark-gray: var(--dark-gray);
   --color-cream: var(--cream);
   --color-accent: var(--accent-color);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: var(--dark-gray);
     --foreground: var(--cream);
   }
-}
+} */
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+}
+
+.ligatures-discretionary {
+  font-variant-ligatures: discretionary-ligatures;
+}
+.ligatures-normal {
+  font-variant-ligatures: no-discretionary-ligatures;
+}
+
+.no-interaction {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.overlay::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--background);
+  opacity: 0;
+  inset: 0;
 }

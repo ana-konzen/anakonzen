@@ -10,30 +10,40 @@ export default function NavMenu() {
   const pathname = usePathname();
   const isActive = (href: string) => pathname === href;
 
-  if (pathname.includes("/projects/")) {
+  if (pathname.includes("/projects/") || pathname.includes("mdx")) {
     return (
-      <div className="fixed md:text-sm font-mono uppercase font-bold top-8 left-3 z-50">
-        <div className="flex flex-col flex-none h-full space-y-8">
-          <Link href={"/"} className={"hover:bg-amber-200 [writing-mode:vertical-lr]"}>
-            (back)
-          </Link>
-        </div>
+      <div className="fixed subpixel-antialiased text-sm select-none font-normal top-8 left-3 z-50">
+        <Link
+          href={"/projects"}
+          className={"hover:bg-amber-200 [writing-mode:vertical-lr]"}
+        >
+          (back)
+        </Link>
       </div>
     );
   }
 
   return (
-    <div className="fixed md:text-sm font-mono uppercase font-bold top-8 left-3 z-50">
-      <div className="flex flex-col flex-none h-full space-y-8">
+    <div className="fixed select-none font-sans font-normal subpixel-antialiased ligatures-discretionary text-sm  top-4 left-1 z-50">
+      <div className="flex flex-col flex-none h-full space-y-4">
+        <Link
+          href={"/"}
+          className="ml-4 font-serif italic subpixel-antialiased  font-light text-xl"
+        >
+          Ana Konzen
+        </Link>
         {navLinks.map((link) => (
-          <span key={link.href}>
-            <Link
-              href={link.href}
-              className={`${isActive(link.href) ? "bg-amber-200 ml-1 [writing-mode:horizontal-tb]" : "hover:bg-amber-200 [writing-mode:vertical-lr]"}`}
+          <Link
+            href={link.href}
+            key={link.href}
+            className={`group w-fit pb-2 px-2`}
+          >
+            <span
+              className={`${isActive(link.href) ? "ml-1  bg-amber-200 [writing-mode:horizontal-tb]" : "group-hover:bg-amber-200 [writing-mode:vertical-lr]"}`}
             >
               {link.title}
-            </Link>
-          </span>
+            </span>
+          </Link>
         ))}
       </div>
     </div>
