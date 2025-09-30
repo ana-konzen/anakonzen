@@ -25,6 +25,7 @@ export function TitlePage({
 function HeroImage({ data, slug }: { data: ProjectDataType; slug: string }) {
   const styling = data.heroStyling || "w-full object-cover h-full";
   const heroUrl = data.heroPath || `/projects/${slug}/hero.png`;
+  const blurUrl = `/projects${heroUrl.replace(/\/([^/]+)\.(jpg|jpeg|png|gif)$/, "/blurs/$1.$2")}`;
   return (
     <div className="overlay w-auto overflow-visible relative mix-blend-multiply flex-2 md:h-[70%] h-auto mb-4">
       <Image
@@ -33,7 +34,10 @@ function HeroImage({ data, slug }: { data: ProjectDataType; slug: string }) {
         height={1000}
         alt={data.title}
         className={`${styling} no-interaction mix-blend-multiply`}
-        unoptimized
+        priority
+        loading={"eager"}
+        placeholder="blur"
+        blurDataURL={blurUrl}
       />
     </div>
   );

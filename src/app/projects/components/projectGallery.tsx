@@ -59,7 +59,6 @@ function ImageGallery({
               width={1500}
               height={1000}
               loading="eager"
-              priority={images.length === 1}
               placeholder="blur"
               blurDataURL={blurUrl}
             />
