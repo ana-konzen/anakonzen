@@ -35,6 +35,8 @@ function GalleryItem({ item }: { item: ProjectDataType }) {
             width={400}
             height={400}
             alt={item.title}
+            priority
+            loading="eager"
             className="overlay no-interaction w-full h-full object-cover"
           />
         </Link>
