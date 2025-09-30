@@ -20,12 +20,24 @@ export async function generateMetadata({
   const description = data.description ?? "";
 
   const url = `/projects/${data.slug}`;
+  const heroUrl = data.heroPath ?? `${data.slug}/hero.png`;
 
   return {
     title,
     description,
-    openGraph: { title, description, url, type: "article" },
-    twitter: { card: "summary_large_image", title, description },
+    openGraph: {
+      title,
+      description,
+      url,
+      type: "article",
+      images: data.heroIsVideo ? [] : [`/projects/${heroUrl}`],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: data.heroIsVideo ? [] : [`/projects/${heroUrl}`],
+    },
   };
 }
 
