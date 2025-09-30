@@ -49,7 +49,7 @@ function ImageGallery({
         const imgUrl = typeof image === "string" ? image : image.url;
         // blur path is /projects/project-name/blurs/imagename.jpg
         const blurUrl = `/projects${imgUrl.replace(/\/([^/]+)\.(jpg|jpeg|png|gif)$/, "/blurs/$1.$2")}`;
-        console.log(blurUrl);
+        // console.log(blurUrl);
         return (
           <div key={imgUrl} className={imageClass}>
             <Image

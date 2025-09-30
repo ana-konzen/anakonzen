@@ -31,9 +31,7 @@ export async function getProjects() {
     .readdirSync(path.join(process.cwd(), "src", "content", "projects"))
     .filter((file) => file.endsWith(".mdx"));
 
-  console.log("Available MDX files:", mdxFiles);
-
-  console.log(path.join(process.cwd(), "src", "content", "projects"));
+  // console.log("Available MDX files:", mdxFiles);
 
   const projects = await Promise.all(
     mdxFiles.map(async (file) => {
