@@ -24,12 +24,13 @@ export function TitlePage({
 
 function HeroImage({ data, slug }: { data: ProjectDataType; slug: string }) {
   const styling = data.heroStyling || "w-full object-cover h-full";
-  const heroUrl = data.heroPath || `/projects/${slug}/hero.png`;
-  const blurUrl = `/projects${heroUrl.replace(/\/([^/]+)\.(jpg|jpeg|png|gif)$/, "/blurs/$1.$2")}`;
+  const heroUrl = data.heroPath || `${slug}/hero.png`;
+  const blurUrl = `/projects/${heroUrl.replace(/\/([^/]+)\.(jpg|jpeg|png|gif)$/, "/blurs/$1.$2")}`;
+  console.log(blurUrl);
   return (
     <div className="overlay w-auto overflow-visible relative mix-blend-multiply flex-2 md:h-[70%] h-auto mb-4">
       <Image
-        src={heroUrl}
+        src={`/projects/${heroUrl}`}
         width={1000}
         height={1000}
         alt={data.title}
