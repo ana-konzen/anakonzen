@@ -22,7 +22,7 @@ export function ProjectSection({
   multiply?: boolean;
 }) {
   const ref = useRef(null);
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, { margin: "50px" });
 
   const contClass = classNames({
     "flex flex-col justify-center md:justify-start md:space-y-0 py-8 md:items-center md:flex-row space-y-12 md:space-x-16":
