@@ -6,8 +6,13 @@ import { getProjects, ProjectDataType } from "@/app/projects/util";
 
 export default async function ProjectsPage() {
   const projectData = await getProjects();
+  const rankedProjects = projectData.sort((a, b) => {
+    const priorityA = a.priority || 9999; // Default to a high number if priority is undefined
+    const priorityB = b.priority || 9999;
+    return priorityA - priorityB;
+  });
 
-  return <Gallery content={projectData} />;
+  return <Gallery content={rankedProjects} />;
 }
 
 function Gallery({ content }: { content: ProjectDataType[] }) {
@@ -37,6 +42,7 @@ function GalleryItem({ item }: { item: ProjectDataType }) {
             alt={item.title}
             priority
             loading="eager"
+            unoptimized
             className="overlay no-interaction w-full h-full object-cover"
           />
         </Link>

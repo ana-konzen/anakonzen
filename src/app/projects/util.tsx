@@ -13,6 +13,7 @@ export type ProjectDataType = {
   heroPath?: string;
   link?: string;
   linkTitle?: string;
+  priority?: number;
 };
 
 export type VideoObjectType = {
