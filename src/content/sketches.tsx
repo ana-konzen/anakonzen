@@ -5,23 +5,27 @@ export type SketchType = {
   img: string;
 };
 
+function getSketchUrl(path: string) {
+  return `https://sketches.anakonzen.com/${path}/`;
+}
+
 export const sketches: SketchType[] = [
   {
     title: "Sorry, ____",
     year: 2025,
-    link: "https://openprocessing.org/sketch/2715791",
+    link: getSketchUrl("sorry"),
     img: "sorry.png",
   },
   {
     title: "Molnar",
     year: 2024,
-    link: "https://openprocessing.org/sketch/2715788",
+    link: getSketchUrl("molnar"),
     img: "molnar.png",
   },
   {
     title: "Feathers",
     year: 2024,
-    link: "https://openprocessing.org/sketch/2715767",
+    link: getSketchUrl("feathers"),
     img: "feathers.png",
   },
   {
@@ -33,13 +37,13 @@ export const sketches: SketchType[] = [
   {
     title: "Pat Steir's Waterfalls",
     year: 2024,
-    link: "https://openprocessing.org/sketch/2715782",
+    link: getSketchUrl("waterfalls"),
     img: "waterfalls.png",
   },
   {
     title: "Sea Particles",
     year: 2024,
-    link: "https://openprocessing.org/sketch/2715784",
+    link: getSketchUrl("sea"),
     img: "sea-particles.png",
   },
 ];
