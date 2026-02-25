@@ -37,6 +37,11 @@ export default function AboutPage() {
         </BioSection>
         <BioSection title="Experience">
           <ExperienceItem
+            role="Creative Technologist"
+            company="Brand New School, New York, NY"
+            year="November 2025 - present"
+          />
+          <ExperienceItem
             role="Research Assistant, Design and Technology"
             company="Parsons School of Design, New York, NY"
             year="September 2024 — May 2025"
